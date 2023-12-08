@@ -21,6 +21,7 @@ class Solution {
               continue;
             }
             
+            else 
             {
                 int num = nums[i];
                 while(set.contains(num+1))
