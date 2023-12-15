@@ -18,7 +18,9 @@ class Solution {
             // Handle the case where k is equal to 0 separately
             if (k == 0) {
                 // Count pairs where the frequency of an element is greater than or equal to 2
-                count += hasmap.get(num) >= 2 ? 1 : 0;
+                if (hasmap.get(num) >= 2) {
+                    count++;
+                }
             } else {
                 // Check if target1 exists in the hashmap
                 if (hasmap.containsKey(target1)) {
