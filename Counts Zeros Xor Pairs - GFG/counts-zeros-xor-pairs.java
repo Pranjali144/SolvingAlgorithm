@@ -61,23 +61,22 @@ class Complete{
    
     // Function for finding maximum and value pair
     public static long calculate (int arr[], int n) {
+        
+        Map<Integer,Integer> hasmap = new HashMap<>();
+        
         int count = 0;
-        Map<Integer, Integer> frequencyMap = new HashMap<>();
-
-        for (int i = 0; i < n; i++) {
-            int currentElement = arr[i];
-
-            // Check if the XOR of the current element with any previous element is zero
-            if (frequencyMap.containsKey(currentElement)) {
-                count += frequencyMap.get(currentElement);
+        
+        for(int i =0;i<n;i++)
+        {
+            if(hasmap.containsKey(arr[i]))
+            {
+                count = count + hasmap.get(arr[i]);
             }
-
-            // Update the frequency of the current element in the HashMap
-            frequencyMap.put(currentElement, frequencyMap.getOrDefault(currentElement, 0) + 1);
+            
+            hasmap.put(arr[i],hasmap.getOrDefault(arr[i],0)+1);
         }
         
         return count;
-
     }
     
     
