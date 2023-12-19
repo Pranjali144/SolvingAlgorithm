@@ -26,7 +26,7 @@ class Solution {
             }
             else
             {
-                firstOcc = mid;
+                arr[0] = mid;
                 end = mid-1;
             }
         }
@@ -48,13 +48,12 @@ class Solution {
             }
             else
             {
-                lastOcc = mid;
+                arr[1] = mid;
                 start = mid +1;
             }
         }
         
-        arr[0] = firstOcc;
-        arr[1] = lastOcc;
+       
         
         return arr;
     }
